@@ -1,0 +1,24 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git fetch:*)",
+      "Bash(ls:*)",
+      "Bash(powershell -ExecutionPolicy Bypass -Command \"& ''.specify/scripts/powershell/create-new-feature.ps1'' -Json -ShortName ''add-task'' -Number 1 ''Task Model and Add Task functionality''\")",
+      "Bash(git branch:*)",
+      "Bash(powershell -ExecutionPolicy Bypass -Command \". ''.specify/scripts/powershell/create-new-feature.ps1'' -Json -ShortName ''add-task'' -Number 1 ''Task Model and Add Task''\")",
+      "Bash(powershell -ExecutionPolicy Bypass -File:*)",
+      "Bash(mkdir:*)",
+      "Bash(git rev-parse:*)",
+      "Bash(test:*)",
+      "Bash(touch:*)",
+      "Bash(python:*)",
+      "Bash(cat:*)",
+      "Bash(powershell -ExecutionPolicy Bypass -Command \". ''.specify/scripts/powershell/create-new-feature.ps1'' -Json -Number 2 -ShortName ''view-tasks'' ''Spec 2: View Tasks & Status Indication\n\n## Overview\nSpec 2 covers viewing all tasks and displaying their status for an in-memory Python console Todo application. \n\n## Scope\n- Implement functionality to list all tasks stored in memory.\n- Display task details:\n  - Unique ID\n  - Title\n  - Description\n  - Completion status \\(completed / incomplete\\)\n- Include status indicators when showing tasks in the console.\n- Only one Python file must be created for this spec, named view.py inside /src folder.\n\n## Constraints\n- Follow clean code principles.\n- Console-based interaction only.\n- Do not include add, update, delete, or completion toggle functionality in this spec.\n\n## Acceptance Criteria\n- The user can view all tasks in memory.\n- Each task displays its ID, title, description, and status.\n- Status indicator correctly shows completed or incomplete.\n- All functionality is implemented in a single file: view.py.''\")",
+      "Bash(powershell -ExecutionPolicy Bypass -Command \". ''.specify/scripts/powershell/setup-plan.ps1'' -Json\")",
+      "Skill(sp.plan)",
+      "Bash(git checkout:*)",
+      "Bash(powershell -ExecutionPolicy Bypass -Command:*)",
+      "Bash(powershell -Command:*)"
+    ]
+  }
+}

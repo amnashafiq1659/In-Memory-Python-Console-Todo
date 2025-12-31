@@ -1,0 +1,7 @@
+[project]
+name = "TodoCLI"
+version = "0.1.0"
+description = "A clean, menu-driven Python CLI application for managing tasks with a high-contrast terminal interface."
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = []
