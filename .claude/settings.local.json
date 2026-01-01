@@ -18,7 +18,10 @@
       "Skill(sp.plan)",
       "Bash(git checkout:*)",
       "Bash(powershell -ExecutionPolicy Bypass -Command:*)",
-      "Bash(powershell -Command:*)"
+      "Bash(powershell -Command:*)",
+      "Bash(git config:*)",
+      "Skill(sp.phr)",
+      "Bash(.specify/scripts/bash/create-phr.sh:*)"
     ]
   }
 }

@@ -7,6 +7,8 @@ Provides a unified menu-driven interface for all Todo operations:
 - Update tasks
 - Delete tasks
 - Mark tasks complete/incomplete
+- Search / Filter tasks
+- Sort tasks
 
 All operations share the same in-memory task storage from add module.
 """
@@ -16,6 +18,8 @@ from view import run_view_tasks_ui
 from update import run_update_task_ui
 from delete import run_delete_task_ui
 from complete import mark_complete, mark_incomplete, run_complete_task_ui
+from search import run_search_ui
+from sort_tasks import run_sort_ui
 
 
 class Colors:
@@ -85,6 +89,8 @@ def print_menu() -> None:
     print(f"{Colors.GREEN}{Colors.BOLD}3.{Colors.RESET} {Colors.MAGENTA}Update Task{Colors.RESET}")
     print(f"{Colors.GREEN}{Colors.BOLD}4.{Colors.RESET} {Colors.MAGENTA}Delete Task{Colors.RESET}")
     print(f"{Colors.GREEN}{Colors.BOLD}5.{Colors.RESET} {Colors.MAGENTA}Mark Task Complete/Incomplete{Colors.RESET}")
+    print(f"{Colors.GREEN}{Colors.BOLD}6.{Colors.RESET} {Colors.MAGENTA}Search / Filter Tasks{Colors.RESET}")
+    print(f"{Colors.GREEN}{Colors.BOLD}7.{Colors.RESET} {Colors.MAGENTA}Sort Tasks{Colors.RESET}")
     print(f"{Colors.RED}{Colors.BOLD}0.{Colors.RESET} {Colors.RED}Exit{Colors.RESET}")
     print()
 
@@ -93,16 +99,16 @@ def get_menu_choice() -> str:
     Get and validate user's menu choice.
 
     Returns:
-        str: The validated menu choice ('0', '1', '2', '3', '4', '5').
+        str: The validated menu choice ('0', '1', '2', '3', '4', '5', '6', '7').
 
     Raises:
         ValueError: If input is invalid.
     """
-    choice = input(f"{Colors.BOLD}{Colors.ORANGE}Enter choice (0-5): {Colors.RESET}").strip()
-    valid_choices = {'0', '1', '2', '3', '4', '5'}
+    choice = input(f"{Colors.BOLD}{Colors.ORANGE}Enter choice (0-7): {Colors.RESET}").strip()
+    valid_choices = {'0', '1', '2', '3', '4', '5', '6', '7'}
 
     if choice not in valid_choices:
-        raise ValueError("Invalid choice. Please enter a number between 0 and 5.")
+        raise ValueError("Invalid choice. Please enter a number between 0 and 7.")
 
     return choice
 
@@ -151,6 +157,24 @@ def handle_mark_task() -> None:
     print_header("MARK TASK")
     print_subheader("Mark Complete / Incomplete")
     run_complete_task_ui()
+    print()
+    print_success("Returned to main menu")
+
+
+def handle_search_tasks() -> None:
+    """Handle the search / filter tasks menu option."""
+    print()
+    print_header("SEARCH / FILTER TASKS")
+    run_search_ui()
+    print()
+    print_success("Returned to main menu")
+
+
+def handle_sort_tasks() -> None:
+    """Handle the sort tasks menu option."""
+    print()
+    print_header("SORT TASKS")
+    run_sort_ui(_tasks)
     print()
     print_success("Returned to main menu")
 
@@ -234,6 +258,10 @@ def run_main_menu() -> None:
             handle_delete_task()
         elif choice == '5':
             handle_mark_task()
+        elif choice == '6':
+            handle_search_tasks()
+        elif choice == '7':
+            handle_sort_tasks()
         elif choice == '0':
             handle_exit()
             break
