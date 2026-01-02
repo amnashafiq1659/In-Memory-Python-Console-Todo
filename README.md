@@ -219,13 +219,6 @@ python src/main.py
 - **In-Memory Storage**: Tasks are lost when the application exits
 - **Single-User**: Designed for single-user sessions
 - **Terminal-Based**: Requires an ANSI color-compatible terminal
+<<<<<<< HEAD
 - **Priority Flexibility**: Accepts both numeric (1, 2, 3) and text (High, Medium, Low) inputs
 - **Search Performance**: All search and sort operations complete in under 1 second for typical task lists
-
-## License
-
-[Add your license here]
-
-## Contributing
-
-[Add contribution guidelines here]
